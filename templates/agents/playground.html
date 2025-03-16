@@ -1,0 +1,134 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Sequential Processing UI - CodeTail{% endblock %}
+
+{% block extra_head %}
+<style>
+  /* Custom scrollbar for code areas */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #374151;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bg-gray-100 min-h-screen flex items-center justify-center p-10">
+    <div class="max-w-6xl w-full grid grid-cols-2 gap-6">
+        <!-- Left Card: Info -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <!-- Navigation -->
+            <div class="flex items-center justify-between border-b pb-3">
+                <div class="text-sm text-gray-600">AI SDK / <span class="text-blue-500">Agents</span></div>
+                <div class="flex space-x-2">
+                    <button class="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">Preview</button>
+                    <button class="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">Code</button>
+                    <button class="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">Docs</button>
+                </div>
+            </div>
+
+            <!-- Header with Model Info -->
+            <div class="mt-6">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <h3 class="font-semibold">Sequential Processing</h3>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">gpt-4o-mini</span>
+                    </div>
+                    <div class="flex items-center space-x-4 text-xs text-gray-500">
+                        <span class="flex items-center">
+                            <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            62s
+                        </span>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-600 mt-4">
+                    Advanced content transformation pipeline that processes input through carefully orchestrated stages: 
+                    <strong>Deep Analysis → Smart Summarization → Intelligent Conclusion</strong>.
+                </p>
+            </div>
+
+            <!-- Capabilities -->
+            <div class="mt-6">
+                <h4 class="text-sm font-semibold mb-2">Capabilities</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2 py-1 text-xs bg-gray-200 rounded-md">Three-stage sequential pipeline</span>
+                    <span class="px-2 py-1 text-xs bg-gray-200 rounded-md">Deep content analysis</span>
+                    <span class="px-2 py-1 text-xs bg-gray-200 rounded-md">Smart summarization</span>
+                    <span class="px-2 py-1 text-xs bg-gray-200 rounded-md">Instruction-based conclusion</span>
+                    <span class="px-2 py-1 text-xs bg-gray-200 rounded-md">Cumulative processing</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-6 flex items-center justify-between">
+                <div class="flex items-center space-x-4 text-sm text-gray-500">
+                    <a href="#" class="flex items-center hover:text-gray-700">
+                        <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Documentation
+                    </a>
+                    <a href="#" class="flex items-center hover:text-gray-700">
+                        View Examples
+                        <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Card: Code -->
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h4 class="text-sm font-semibold">Content to Process</h4>
+                <button class="text-xs text-gray-500 hover:text-gray-700 flex items-center">
+                    <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Load Example
+                </button>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="prose prose-sm max-w-none">
+                    <h4 class="mt-0 text-base"># Authentication in Distributed Systems</h4>
+                    <p>In modern distributed systems, authentication presents unique challenges due to:</p>
+                    <ul>
+                        <li>Multiple service interactions</li>
+                        <li>Various trust boundaries</li>
+                        <li>Different authentication mechanisms</li>
+                        <li>Stateless nature of communications</li>
+                    </ul>
+                    <p>Common approaches include:</p>
+                    <ol>
+                        <li>Token-based authentication (JWT)</li>
+                        <li>OAuth 2.0 and OpenID Connect</li>
+                        <li>API keys and secrets</li>
+                        <li>Mutual TLS authentication</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="mt-4 flex justify-end">
+                <button class="px-4 py-2 bg-blue-500 text-white text-sm rounded-md hover:bg-blue-600 transition-colors">
+                    Run Agent
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
